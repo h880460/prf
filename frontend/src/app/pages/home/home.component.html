@@ -1,0 +1,29 @@
+<div class="content" role="main">
+  <h2>HOME</h2>
+
+  <ul>
+    <label style="font-weight: bold">Termékek: </label>
+    <li
+      style="padding: 5px"
+      *ngFor="let element of cloudElements"
+      (click)="goToDetails(element)"
+    >
+      {{ element.name }}
+    </li>
+  </ul>
+  <br />
+  <button (click)="refreshDb()">REFRESH</button>
+
+  <br />
+  <div >
+    <button style="float: right;" *ngIf="isAdmin" (click)="goToAdmin()">
+      Admin Page
+    </button>
+    <button style="float: left;  margin-inline-end: 20px;" *ngIf="isAdmin" (click)="goToProducts()">
+      Products
+    </button>
+  </div>
+
+  <br />
+  <a [routerLink]="['/login']">Logout</a>
+</div>

@@ -1,0 +1,22 @@
+<div class="content" role="main">
+  <h2>Admin felület</h2>
+
+  <table style="align-items: center">
+    <tr>
+      <th>Felhasználónév</th>
+      <th>Admin</th>
+      <th></th>
+    </tr>
+    <tr *ngFor="let user of users">
+      <td>{{ user.username }}</td>
+      <td>{{ user.admin }}</td>
+      <td>
+        <a (click)="makeUserAdmin(user.username)"
+          >Jogosultság megváltoztatása</a
+        >
+      </td>
+    </tr>
+  </table>
+  <br />
+  <a [routerLink]="['/home']">Home</a>
+</div>

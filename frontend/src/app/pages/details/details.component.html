@@ -1,0 +1,15 @@
+<div class="content" role="main">
+  <h2>Termék részletező</h2>
+  <br />
+  <div>
+    <div>Termék megnevezése : {{ product.name }}</div>
+    <br />
+    <div>Termék leírása : {{ product.description }}</div>
+  </div>
+  <br />
+  <button *ngIf="isAdmin" (click)="deleteProduct(product.id)">
+    Termék törlése
+  </button>
+  <br />
+  <a [routerLink]="['/home']">Home</a>
+</div>

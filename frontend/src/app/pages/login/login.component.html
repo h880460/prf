@@ -1,0 +1,23 @@
+<div class="content" role="main">
+  <h2>Login</h2>
+
+  <div>
+    <label>Username</label>
+    <input type="text" id="username" [(ngModel)]="username" />
+  </div>
+
+  <br />
+
+  <div>
+    <label>Password</label>
+    <input type="password" id="password" [(ngModel)]="password" />
+  </div>
+
+  <br />
+
+  <button (click)="login()">Login</button>
+
+  <br />
+
+  <a [routerLink]="['/register']">Register</a>
+</div>

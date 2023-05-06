@@ -1,0 +1,39 @@
+<div class="content" role="main">
+  <h2>Új termék hozzáadása</h2>
+
+  <div>
+    <div>
+      <label>ID</label>
+      <input
+        style="float: right"
+        type="text"
+        id="id"
+        [(ngModel)]="product.id"
+      />
+    </div>
+    <br />
+    <div>
+      <label>Name</label>
+      <input
+        style="float: right"
+        type="text"
+        id="value"
+        [(ngModel)]="product.name"
+      />
+    </div>
+    <br />
+    <div>
+      <label>Description</label>
+      <input
+        style="float: right"
+        type="text"
+        id="value"
+        [(ngModel)]="product.description"
+      />
+    </div>
+  </div>
+  <br />
+  <button (click)="saveData()">SAVE</button>
+  <br />
+  <a [routerLink]="['/home']">Home</a>
+</div>

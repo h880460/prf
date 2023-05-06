@@ -1,0 +1,45 @@
+<div class="content" role="main">
+  <h2>Register</h2>
+
+  <div>
+    <div>
+      <label>Username</label>
+      <input
+        style="float: right"
+        type="text"
+        id="username"
+        required
+        [(ngModel)]="username"
+      />
+    </div>
+    <br />
+    <div>
+      <label>Password</label>
+      <input
+        style="float: right"
+        type="password"
+        id="password"
+        required
+        [(ngModel)]="password"
+      />
+    </div>
+    <br />
+    <div>
+      <label>Email</label>
+      <input
+        style="float: right"
+        type="email"
+        id="email"
+        validateEmail="true"
+        required
+        [(ngModel)]="email"
+      />
+    </div>
+  </div>
+
+  <br />
+  <button (click)="register()">Register</button>
+
+  <br />
+  <a [routerLink]="['/login']">Login</a>
+</div>
