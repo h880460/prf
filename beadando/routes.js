@@ -48,7 +48,7 @@ router.route("/status").get((req, res, next) => {
 router.route("/user/makeAdmin").put((req, res, next) => {
   userModel.findOne({ username: req.body.username }, (err, user) => {
     if (err) return res.status(500).send("DB hiba");
-    if (user.admin) {
+    if (user.admin && user.username != "admin") {
       user.admin = false;
       user.save((error) => {
         if (error)
@@ -57,7 +57,7 @@ router.route("/user/makeAdmin").put((req, res, next) => {
           .status(200)
           .send(user.username + " megszűnt az admin jogosultsága");
       });
-    } else if (!user.admin) {
+    } else if (!user.admin && user.username != "admin") {
       user.admin = true;
       user.save((error) => {
         if (error)
@@ -67,7 +67,7 @@ router.route("/user/makeAdmin").put((req, res, next) => {
           .send(user.username + " kapott admin jogosultságot");
       });
     } else {
-      return res.status(400).send("Nincs ilyen user az adatbazisban");
+      return res.status(400).send("Nincs ilyen user az adatbazisban vagy nem szabad megváltoztatni az adott user jogosultságát");
     }
   });
 });
